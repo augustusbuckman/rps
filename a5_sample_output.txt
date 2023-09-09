@@ -1,0 +1,477 @@
+Example output for CCD112 Assignment 5 ROCK PAPER SCISSORS.
+
+Give the same inputs, your output shall match the following output exactly unless
+the user does not set the seed, in which case, your input will very likely be different.
+
+The output does not include the lines with ***** before and after the output. 
+Those lines are to delineate the required output.
+
+I strongly recommend you check your output against the expected output using
+a diff tool such as https://www.diffchecker.com/.
+
+Example 1 - Inputs: Olivia, 1, y, 9876, P
+
+*****
+Welcome to ROCK PAPER SCISSORS. I, Computer, will be your opponent.
+--- INITIAL INPUT ---
+Please enter your name: Olivia
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter the number of rounds to play: 1
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter y if you want to set the seed: y
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter an integer for the seed: 9876
+Thank you!
+
+--- Round 1 ---
+Olivia, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: P
+I pick Paper.
+We picked the same thing. Round is a draw.
+
+We played 1 round of ROCK PAPER SCISSORS.
+Olivia won 0 rounds.
+Well played.
+
+*****
+
+
+Example 2 - Inputs: Isabelle, 1, y, 9876, S
+
+*****
+Welcome to ROCK PAPER SCISSORS. I, Computer, will be your opponent.
+--- INITIAL INPUT ---
+Please enter your name: Isabelle
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter the number of rounds to play: 1
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter y if you want to set the seed: y
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter an integer for the seed: 9876
+Thank you!
+
+--- Round 1 ---
+Isabelle, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: S
+I pick Paper.
+Scissors cut Paper. You win.
+
+We played 1 round of ROCK PAPER SCISSORS.
+Isabelle won 1 round.
+Well played.
+
+*****
+
+
+Example 3 - Inputs: Kelly, 10, y, 9876, R, R, R, R, R, R, R, R, R, R
+
+*****
+Welcome to ROCK PAPER SCISSORS. I, Computer, will be your opponent.
+--- INITIAL INPUT ---
+Please enter your name: Kelly
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter the number of rounds to play: 10
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter y if you want to set the seed: y
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter an integer for the seed: 9876
+Thank you!
+
+--- Round 1 ---
+Kelly, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Paper.
+Paper covers Rock. I win.
+
+--- Round 2 ---
+Kelly, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Rock.
+We picked the same thing. Round is a draw.
+
+--- Round 3 ---
+Kelly, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Scissors.
+Rock breaks Scissors. You win.
+
+--- Round 4 ---
+Kelly, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Paper.
+Paper covers Rock. I win.
+
+--- Round 5 ---
+Kelly, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Paper.
+Paper covers Rock. I win.
+
+--- Round 6 ---
+Kelly, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Scissors.
+Rock breaks Scissors. You win.
+
+--- Round 7 ---
+Kelly, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Scissors.
+Rock breaks Scissors. You win.
+
+--- Round 8 ---
+Kelly, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Scissors.
+Rock breaks Scissors. You win.
+
+--- Round 9 ---
+Kelly, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Paper.
+Paper covers Rock. I win.
+
+--- Round 10 ---
+Kelly, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Rock.
+We picked the same thing. Round is a draw.
+
+We played 10 rounds of ROCK PAPER SCISSORS.
+Kelly won 4 rounds.
+Well played.
+
+*****
+
+
+Example 4 - Inputs: D, 7, y, 1234, P, S, P, P, R, S, R
+
+*****
+Welcome to ROCK PAPER SCISSORS. I, Computer, will be your opponent.
+--- INITIAL INPUT ---
+Please enter your name: D
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter the number of rounds to play: 7
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter y if you want to set the seed: y
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter an integer for the seed: 1234
+Thank you!
+
+--- Round 1 ---
+D, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: P
+I pick Paper.
+We picked the same thing. Round is a draw.
+
+--- Round 2 ---
+D, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: S
+I pick Rock.
+Rock breaks Scissors. I win.
+
+--- Round 3 ---
+D, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: P
+I pick Rock.
+Paper covers Rock. You win.
+
+--- Round 4 ---
+D, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: P
+I pick Rock.
+Paper covers Rock. You win.
+
+--- Round 5 ---
+D, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Scissors.
+Rock breaks Scissors. You win.
+
+--- Round 6 ---
+D, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: S
+I pick Rock.
+Rock breaks Scissors. I win.
+
+--- Round 7 ---
+D, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Scissors.
+Rock breaks Scissors. You win.
+
+We played 7 rounds of ROCK PAPER SCISSORS.
+D won 4 rounds.
+Well played.
+
+*****
+
+
+Example 5 - Inputs: Noah, 8, y, 77777, S, R, S, R, P, P, S, R
+
+*****
+Welcome to ROCK PAPER SCISSORS. I, Computer, will be your opponent.
+--- INITIAL INPUT ---
+Please enter your name: Noah
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter the number of rounds to play: 8
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter y if you want to set the seed: y
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter an integer for the seed: 77777
+Thank you!
+
+--- Round 1 ---
+Noah, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: S
+I pick Scissors.
+We picked the same thing. Round is a draw.
+
+--- Round 2 ---
+Noah, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Paper.
+Paper covers Rock. I win.
+
+--- Round 3 ---
+Noah, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: S
+I pick Rock.
+Rock breaks Scissors. I win.
+
+--- Round 4 ---
+Noah, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Scissors.
+Rock breaks Scissors. You win.
+
+--- Round 5 ---
+Noah, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: P
+I pick Paper.
+We picked the same thing. Round is a draw.
+
+--- Round 6 ---
+Noah, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: P
+I pick Paper.
+We picked the same thing. Round is a draw.
+
+--- Round 7 ---
+Noah, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: S
+I pick Rock.
+Rock breaks Scissors. I win.
+
+--- Round 8 ---
+Noah, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Rock.
+We picked the same thing. Round is a draw.
+
+We played 8 rounds of ROCK PAPER SCISSORS.
+Noah won 1 round.
+Well played.
+
+*****
+
+
+Example 6 - Inputs: Irena, 10, y, 6262020, P, R, S, S, S, S, R, R, R, S
+
+*****
+Welcome to ROCK PAPER SCISSORS. I, Computer, will be your opponent.
+--- INITIAL INPUT ---
+Please enter your name: Irena
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter the number of rounds to play: 10
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter y if you want to set the seed: y
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter an integer for the seed: 6262020
+Thank you!
+
+--- Round 1 ---
+Irena, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: P
+I pick Scissors.
+Scissors cut Paper. I win.
+
+--- Round 2 ---
+Irena, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Scissors.
+Rock breaks Scissors. You win.
+
+--- Round 3 ---
+Irena, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: S
+I pick Rock.
+Rock breaks Scissors. I win.
+
+--- Round 4 ---
+Irena, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: S
+I pick Paper.
+Scissors cut Paper. You win.
+
+--- Round 5 ---
+Irena, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: S
+I pick Rock.
+Rock breaks Scissors. I win.
+
+--- Round 6 ---
+Irena, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: S
+I pick Paper.
+Scissors cut Paper. You win.
+
+--- Round 7 ---
+Irena, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Rock.
+We picked the same thing. Round is a draw.
+
+--- Round 8 ---
+Irena, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Paper.
+Paper covers Rock. I win.
+
+--- Round 9 ---
+Irena, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Paper.
+Paper covers Rock. I win.
+
+--- Round 10 ---
+Irena, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: S
+I pick Rock.
+Rock breaks Scissors. I win.
+
+We played 10 rounds of ROCK PAPER SCISSORS.
+Irena won 3 rounds.
+Well played.
+
+*****
+
+
+Example 7 - Inputs: Tyler, 3, y, 3, P, P, S
+
+*****
+Welcome to ROCK PAPER SCISSORS. I, Computer, will be your opponent.
+--- INITIAL INPUT ---
+Please enter your name: Tyler
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter the number of rounds to play: 3
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter y if you want to set the seed: y
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter an integer for the seed: 3
+Thank you!
+
+--- Round 1 ---
+Tyler, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: P
+I pick Rock.
+Paper covers Rock. You win.
+
+--- Round 2 ---
+Tyler, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: P
+I pick Scissors.
+Scissors cut Paper. I win.
+
+--- Round 3 ---
+Tyler, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: S
+I pick Scissors.
+We picked the same thing. Round is a draw.
+
+We played 3 rounds of ROCK PAPER SCISSORS.
+Tyler won 1 round.
+Well played.
+
+*****
+
+
+Example 8 - Inputs: Skyler, 2, y, 10000, R, P
+
+*****
+Welcome to ROCK PAPER SCISSORS. I, Computer, will be your opponent.
+--- INITIAL INPUT ---
+Please enter your name: Skyler
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter the number of rounds to play: 2
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter y if you want to set the seed: y
+Thank you!
+
+--- INITIAL INPUT ---
+Please enter an integer for the seed: 10000
+Thank you!
+
+--- Round 1 ---
+Skyler, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: R
+I pick Scissors.
+Rock breaks Scissors. You win.
+
+--- Round 2 ---
+Skyler, enter your choice for this round.
+R for Rock, P for Paper, S for Scissors: P
+I pick Paper.
+We picked the same thing. Round is a draw.
+
+We played 2 rounds of ROCK PAPER SCISSORS.
+Skyler won 1 round.
+Well played.
+
+*****
