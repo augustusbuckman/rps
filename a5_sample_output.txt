@@ -1,4 +1,4 @@
-Example output for CCD112 Assignment 5 ROCK PAPER SCISSORS.
+Example output for CSSD 204 Assignment 7 ROCK PAPER SCISSORS.
 
 Give the same inputs, your output shall match the following output exactly unless
 the user does not set the seed, in which case, your input will very likely be different.
