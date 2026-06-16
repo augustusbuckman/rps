@@ -1,11 +1,11 @@
 # File: rps.py
 # Description: <A DESCRIPTION OF YOUR PROGRAM>
-# Assignment Number: 5
+# Assignment Number: 7
 #
 # Name: <YOUR NAME>
 # EID:  <YOUR EID>
 # Email: <YOUR EMAIL>
-# Grader: <YOUR GRADER'S NAME>
+# Grader: <YOUR GRADER'S NAME Carolyn OR Emma OR Ahmad>
 #
 #On my honor, <YOUR NAME>, this programming assignment is my own work
 #and I have not provided this code to any other student.

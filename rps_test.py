@@ -9,7 +9,7 @@ import tud_test_base as tud
 class TestRPS(unittest.TestCase):
 
     #################################################
-    # Helper Methods
+    # Helpers
     #################################################
 
     def run_program(self, inputs):
@@ -19,6 +19,28 @@ class TestRPS(unittest.TestCase):
         rps.main()
 
         return tud.get_display_output()
+
+    #################################################
+    # Required Functions
+    #################################################
+
+    def test_required_functions_exist(self):
+
+        required = [
+            "main",
+            "get_input",
+            "play_rounds",
+            "get_computer_choice",
+            "get_result",
+            "print_results"
+        ]
+
+        for function_name in required:
+
+            self.assertTrue(
+                hasattr(rps, function_name),
+                f"Missing function {function_name}"
+            )
 
     #################################################
     # Assignment Examples
@@ -37,12 +59,12 @@ class TestRPS(unittest.TestCase):
         joined = "\n".join(output)
 
         self.assertIn(
-            "Olivia won 0 rounds.",
+            "I pick Paper.",
             joined
         )
 
         self.assertIn(
-            "We played 1 round of ROCK PAPER SCISSORS.",
+            "Olivia won 0 rounds.",
             joined
         )
 
@@ -59,7 +81,59 @@ class TestRPS(unittest.TestCase):
         joined = "\n".join(output)
 
         self.assertIn(
+            "I pick Paper.",
+            joined
+        )
+
+        self.assertIn(
             "Isabelle won 1 round.",
+            joined
+        )
+
+    def test_example_4(self):
+
+        output = self.run_program([
+            "D",
+            "7",
+            "y",
+            "1234",
+            "P",
+            "S",
+            "P",
+            "P",
+            "R",
+            "S",
+            "R"
+        ])
+
+        joined = "\n".join(output)
+
+        self.assertIn(
+            "D won 4 rounds.",
+            joined
+        )
+
+    def test_example_5(self):
+
+        output = self.run_program([
+            "Noah",
+            "8",
+            "y",
+            "77777",
+            "S",
+            "R",
+            "S",
+            "R",
+            "P",
+            "P",
+            "S",
+            "R"
+        ])
+
+        joined = "\n".join(output)
+
+        self.assertIn(
+            "Noah won 1 round.",
             joined
         )
 
@@ -83,7 +157,7 @@ class TestRPS(unittest.TestCase):
         )
 
     #################################################
-    # Required Output Sections
+    # Output Requirements
     #################################################
 
     def test_welcome_message(self):
@@ -152,57 +226,12 @@ class TestRPS(unittest.TestCase):
         joined = "\n".join(output)
 
         self.assertIn(
-            "1 round of ROCK PAPER SCISSORS.",
+            "We played 1 round of ROCK PAPER SCISSORS.",
             joined
         )
 
     #################################################
-    # Starter Functions Required
-    #################################################
-
-    def test_required_functions_exist(self):
-
-        required = [
-
-            "main",
-            "get_input",
-            "play_rounds",
-            "get_computer_choice",
-            "get_result",
-            "print_results"
-        ]
-
-        for function_name in required:
-
-            self.assertTrue(
-                hasattr(rps, function_name),
-                f"Missing function {function_name}"
-            )
-
-    #################################################
-    # Function Count
-    #################################################
-
-    def test_multiple_functions_used(self):
-
-        with open("rps.py") as f:
-            tree = ast.parse(f.read())
-
-        function_count = 0
-
-        for node in ast.walk(tree):
-
-            if isinstance(node, ast.FunctionDef):
-                function_count += 1
-
-        self.assertGreaterEqual(
-            function_count,
-            6,
-            "Expected multiple programmer-defined functions."
-        )
-
-    #################################################
-    # No Global Variables
+    # No Globals
     #################################################
 
     def test_no_globals(self):
@@ -224,7 +253,7 @@ class TestRPS(unittest.TestCase):
         )
 
     #################################################
-    # No Lists or Dictionaries
+    # No Lists
     #################################################
 
     def test_no_lists(self):
@@ -239,6 +268,10 @@ class TestRPS(unittest.TestCase):
                 "Lists are not allowed."
             )
 
+    #################################################
+    # No Dictionaries
+    #################################################
+
     def test_no_dictionaries(self):
 
         with open("rps.py") as f:
@@ -252,83 +285,22 @@ class TestRPS(unittest.TestCase):
             )
 
     #################################################
-    # Random Module
+    # Random Required
     #################################################
 
-    def test_random_import_present(self):
+    def test_random_import(self):
 
         with open("rps.py") as f:
-            tree = ast.parse(f.read())
+            code = f.read()
 
-        found = False
-
-        for node in ast.walk(tree):
-
-            if isinstance(node, ast.Import):
-
-                for imported in node.names:
-
-                    if imported.name == "random":
-                        found = True
-
-        self.assertTrue(
-            found,
+        self.assertIn(
+            "import random",
+            code,
             "Assignment requires random module."
         )
 
     #################################################
-    # Readability
-    #################################################
-
-    def test_meaningful_variable_names(self):
-
-        with open("rps.py") as f:
-            tree = ast.parse(f.read())
-
-        descriptive_names = 0
-        bad_names = []
-
-        allowed_short = {
-            "i",
-            "j"
-        }
-
-        for node in ast.walk(tree):
-
-            if isinstance(node, ast.Assign):
-
-                for target in node.targets:
-
-                    if isinstance(
-                        target,
-                        ast.Name
-                    ):
-
-                        name = target.id
-
-                        if (
-                            len(name) <= 2
-                            and name not in allowed_short
-                        ):
-                            bad_names.append(name)
-
-                        if len(name) >= 5:
-                            descriptive_names += 1
-
-        self.assertLessEqual(
-            len(bad_names),
-            2,
-            f"Use more meaningful names instead of {bad_names}"
-        )
-
-        self.assertGreaterEqual(
-            descriptive_names,
-            5,
-            "Expected several descriptive variable names."
-        )
-
-    #################################################
-    # Header and Comments
+    # Documentation
     #################################################
 
     def test_header_exists(self):
@@ -336,8 +308,7 @@ class TestRPS(unittest.TestCase):
         with open("rps.py") as f:
             code = f.read()
 
-        required = [
-
+        required_items = [
             "# File:",
             "# Description:",
             "# Assignment Number:",
@@ -346,42 +317,68 @@ class TestRPS(unittest.TestCase):
             "# Grader:"
         ]
 
-        for item in required:
+        for item in required_items:
 
             self.assertIn(
                 item,
-                code,
-                f"Missing header item {item}"
+                code
             )
 
-    def test_meaningful_comments(self):
+    def test_docstrings(self):
 
         with open("rps.py") as f:
-            lines = f.readlines()
+            tree = ast.parse(f.read())
 
-        meaningful_comments = 0
+        documented_functions = 0
 
-        for line in lines[15:]:
+        for node in ast.walk(tree):
 
-            stripped = line.strip()
+            if isinstance(node, ast.FunctionDef):
 
-            if (
-                stripped.startswith("#")
-                and len(stripped) >= 20
-            ):
-                meaningful_comments += 1
+                if ast.get_docstring(node):
+                    documented_functions += 1
 
         self.assertGreaterEqual(
-            meaningful_comments,
-            3,
-            "Expected at least three meaningful comments."
+            documented_functions,
+            5,
+            "Expected function documentation."
         )
 
     #################################################
-    # Function Length Requirement
+    # Readability
     #################################################
 
-    def test_function_length(self):
+    def test_variable_names(self):
+
+        with open("rps.py") as f:
+            tree = ast.parse(f.read())
+
+        short_names = []
+
+        for node in ast.walk(tree):
+
+            if isinstance(node, ast.Assign):
+
+                for target in node.targets:
+
+                    if isinstance(target, ast.Name):
+
+                        name = target.id
+
+                        if len(name) == 1:
+                            short_names.append(name)
+
+        self.assertLessEqual(
+            len(short_names),
+            2,
+            f"Too many single-letter variables: {short_names}"
+        )
+
+    #################################################
+    # Function Length
+    #################################################
+
+    def test_function_lengths(self):
 
         with open("rps.py") as f:
             lines = f.readlines()
@@ -392,27 +389,52 @@ class TestRPS(unittest.TestCase):
 
             if isinstance(node, ast.FunctionDef):
 
-                start = node.lineno
-                end = node.end_lineno
+                executable_lines = 0
 
-                function_length = (
-                    end - start + 1
-                )
+                for line in lines[
+                    node.lineno - 1:
+                    node.end_lineno
+                ]:
+
+                    stripped = line.strip()
+
+                    if stripped == "":
+                        continue
+
+                    if stripped.startswith("#"):
+                        continue
+
+                    if (
+                        stripped.startswith('"""')
+                        or stripped.startswith("'''")
+                    ):
+                        continue
+
+                    executable_lines += 1
 
                 self.assertLessEqual(
-                    function_length,
-                    35,
-                    f"{node.name} appears too long."
+                    executable_lines,
+                    25,
+                    f"{node.name} exceeds assignment limit."
                 )
 
     #################################################
     # Structure
     #################################################
 
-    def test_main_exists(self):
+    def test_program_runs(self):
 
-        self.assertTrue(
-            hasattr(rps, "main")
+        output = self.run_program([
+            "A",
+            "1",
+            "y",
+            "1",
+            "R"
+        ])
+
+        self.assertGreater(
+            len(output),
+            0
         )
 
 
